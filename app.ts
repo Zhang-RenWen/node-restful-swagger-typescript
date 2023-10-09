@@ -1,11 +1,11 @@
 /**
  * Required External Modules
  */
-import dotenv = require("dotenv");
+import dotenv from "dotenv";
 dotenv.config();
 import cors from "cors";
 import helmet from "helmet";
-import express = require("express");
+import express from "express";
 import { Routes } from "./src/routes/testRoutes";
 
 // firebase

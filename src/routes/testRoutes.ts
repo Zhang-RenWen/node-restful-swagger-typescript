@@ -13,11 +13,11 @@ const db = mysql.createConnection({
 export class Routes {
   public testController: TestController = new TestController();
 
-  public routes(app): void {
+  public routes(app: any): void {
     app.route("/add").get((req: Request, res: Response) => {
       db.query(
         "INSERT INTO new_table (idnew_table, new_tablecol) VALUES (111, 222)",
-        (err, result) => {
+        (err: any, result: any) => {
           if (err) {
             res.status(200).send({
               message: `error:${err}`,
@@ -31,7 +31,7 @@ export class Routes {
       );
     });
     app.route("/new_table").get((req: Request, res: Response) => {
-      db.query("SELECT * FROM new_table", (err, result) => {
+      db.query("SELECT * FROM new_table", (err: any, result: any) => {
         if (err) {
           res.status(200).send({
             message: `error:${err}`,
@@ -69,10 +69,10 @@ export class Routes {
       .put(this.testController.updateTest)
       .delete(this.testController.deleteTest);
 
-    app.get("/reviews", (req, res) => {
+    app.get("/reviews", (req: any, res: any) => {
       console.log(db);
 
-      db.query("SELECT * FROM new_table", (err, result) => {
+      db.query("SELECT * FROM new_table", (err: any, result: any) => {
         if (err) {
           console.log(err);
         } else {

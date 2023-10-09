@@ -6,11 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Required External Modules
  */
-const dotenv = require("dotenv");
-dotenv.config();
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const cors_1 = __importDefault(require("cors"));
 const helmet_1 = __importDefault(require("helmet"));
-const express = require("express");
+const express_1 = __importDefault(require("express"));
 const testRoutes_1 = require("./src/routes/testRoutes");
 // firebase
 // import db = require('./src/connections/firebase_admin')
@@ -22,7 +22,7 @@ const testRoutes_1 = require("./src/routes/testRoutes");
  */
 class App {
     constructor() {
-        this.app = express();
+        this.app = (0, express_1.default)();
         this.routePrv = new testRoutes_1.Routes();
         this.config();
         // this.launchWebSocket();
@@ -68,11 +68,11 @@ class App {
         //port settings
         const port = process.env.PORT || 3000;
         // serving static files
-        this.app.use(express.static("public"));
+        this.app.use(express_1.default.static("public"));
         /**
          *  App Configuration
          */
-        this.app.use(express.static("public"));
+        this.app.use(express_1.default.static("public"));
         this.app.use((0, helmet_1.default)());
         this.app.use((0, cors_1.default)());
         this.app.listen(port);
