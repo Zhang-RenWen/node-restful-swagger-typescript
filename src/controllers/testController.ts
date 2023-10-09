@@ -1,6 +1,6 @@
 // import * as mongoose from 'mongoose';
 // import { TestSchema } from '../models/crmModel';
-import { Request, Response } from 'express'
+import { Request, Response } from "express";
 
 // const Test = mongoose.model('Test', TestSchema);
 
@@ -15,7 +15,7 @@ export class TestController {
     //     res.json(test);
     // });
 
-    res.json({ message: 'Successfully added test!' })
+    res.json({ message: "Successfully added test!" });
   }
 
   public getTests(req: Request, res: Response): void {
@@ -25,7 +25,7 @@ export class TestController {
     //     }
     //     res.json(test);
     // });
-    res.json({ message: 'Successfully got tests!' })
+    res.json({ message: "Successfully got tests!" });
   }
 
   public getTestWithID(req: Request, res: Response): void {
@@ -35,7 +35,7 @@ export class TestController {
     //     }
     //     res.json(test);
     // });
-    res.json({ message: `Successfully got test with ID ${req}!` })
+    res.json({ message: `Successfully got test with ID ${req}!` });
   }
 
   public updateTest(req: Request, res: Response): void {
@@ -45,7 +45,7 @@ export class TestController {
     //     }
     //     res.json(test);
     // });
-    res.json({ message: 'Successfully updated test!' })
+    res.json({ message: "Successfully updated test!" });
   }
 
   public deleteTest(req: Request, res: Response): void {
@@ -56,16 +56,16 @@ export class TestController {
     //     res.json({ message: 'Successfully deleted test!'});
     // });
 
-    res.json({ message: 'Successfully deleted test!' })
+    res.json({ message: "Successfully deleted test!" });
   }
 
   public test(req: Request, res: Response): void {
     res.send({
       success: true,
       result: {},
-      message: '資料讀取成功',
-      req
-    })
+      message: "資料讀取成功",
+      req,
+    });
 
     // app.get('/aowaow', (req, res) => {
     // const myNameRef = db.ref('/aowaow')

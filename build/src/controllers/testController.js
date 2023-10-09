@@ -11,7 +11,7 @@ class TestController {
         //     }
         //     res.json(test);
         // });
-        res.json({ message: 'Successfully added test!' });
+        res.json({ message: "Successfully added test!" });
     }
     getTests(req, res) {
         // Test.find({}, (err, test) => {
@@ -20,7 +20,7 @@ class TestController {
         //     }
         //     res.json(test);
         // });
-        res.json({ message: 'Successfully got tests!' });
+        res.json({ message: "Successfully got tests!" });
     }
     getTestWithID(req, res) {
         // Test.findById(req.params.testId, (err, test) => {
@@ -38,7 +38,7 @@ class TestController {
         //     }
         //     res.json(test);
         // });
-        res.json({ message: 'Successfully updated test!' });
+        res.json({ message: "Successfully updated test!" });
     }
     deleteTest(req, res) {
         // Test.remove({ _id: req.params.testId }, (err, test) => {
@@ -47,14 +47,14 @@ class TestController {
         //     }
         //     res.json({ message: 'Successfully deleted test!'});
         // });
-        res.json({ message: 'Successfully deleted test!' });
+        res.json({ message: "Successfully deleted test!" });
     }
     test(req, res) {
         res.send({
             success: true,
             result: {},
-            message: '資料讀取成功',
-            req
+            message: "資料讀取成功",
+            req,
         });
         // app.get('/aowaow', (req, res) => {
         // const myNameRef = db.ref('/aowaow')
