@@ -25,42 +25,42 @@ class App {
 
   constructor() {
     this.config();
-    this.launchWebSocket();
+    // this.launchWebSocket();
     this.routePrv.routes(this.app);
   }
 
-  private launchWebSocket(): void {
-    const WebSocket = require("ws");
-    const server = new WebSocket.Server({ port: 8080 });
-    server.on("open", function open() {
-      console.log("connected");
-    });
+  // private launchWebSocket(): void {
+  //   const WebSocket = require("ws");
+  //   const server = new WebSocket.Server({ port: 8080 });
+  //   server.on("open", function open() {
+  //     console.log("connected");
+  //   });
 
-    server.on("close", function close() {
-      console.log("disconnected");
-    });
+  //   server.on("close", function close() {
+  //     console.log("disconnected");
+  //   });
 
-    server.on("connection", function connection(ws, req) {
-      const ip = req.connection.remoteAddress;
-      const port = req.connection.remotePort;
-      const clientName = ip + port;
+  //   server.on("connection", function connection(ws, req) {
+  //     const ip = req.connection.remoteAddress;
+  //     const port = req.connection.remotePort;
+  //     const clientName = ip + port;
 
-      console.log("%s is connected", clientName);
+  //     console.log("%s is connected", clientName);
 
-      //告訴使用者自己的ID
-      ws.send(`${clientName} 已加入聊天！`);
+  //     //告訴使用者自己的ID
+  //     ws.send(`${clientName} 已加入聊天！`);
 
-      ws.on("message", function incoming(message) {
-        console.log("received: %s from %s", message, clientName);
-        //廣播所有聊天室使用者
-        server.clients.forEach(function each(client) {
-          if (client.readyState === WebSocket.OPEN) {
-            client.send(clientName + " -> " + message);
-          }
-        });
-      });
-    });
-  }
+  //     ws.on("message", function incoming(message) {
+  //       console.log("received: %s from %s", message, clientName);
+  //       //廣播所有聊天室使用者
+  //       server.clients.forEach(function each(client) {
+  //         if (client.readyState === WebSocket.OPEN) {
+  //           client.send(clientName + " -> " + message);
+  //         }
+  //       });
+  //     });
+  //   });
+  // }
 
   private config(): void {
     // other setting : https://www.npmjs.com/package/swagger-ui-express
