@@ -1,5 +1,17 @@
-// reference: https://www.npmjs.com/package/swagger-autogen
-const swaggerAutogen = require('swagger-autogen')()
-const outputFile = './swagger.json' // 輸出的文件名稱
-const endpointsFiles = ['./src/routes/testRoutes.ts'] // 要指向的 API，通常使用 Express 直接指向到 app.js 就可以
-swaggerAutogen(outputFile, endpointsFiles)
+const swaggerAutogen = require('swagger-autogen')();
+
+const doc = {
+  info: {
+    title: 'Sample Todo',
+    description: 'Description',
+  },
+  host: 'localhost:3000',
+};
+
+const outputFile = './swagger-output.json';
+const routes = ['./app.js'];
+
+/* NOTE: If you are using the express Router, you must pass in the 'routes' only the 
+root file where the route starts, such as index.js, app.js, routes.js, etc ... */
+
+swaggerAutogen(outputFile, routes, doc);
