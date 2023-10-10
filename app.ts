@@ -25,7 +25,7 @@ class App {
 
   constructor() {
     this.config();
-    this.launchWebSocket();
+    // this.launchWebSocket();
     this.routePrv.routes(this.app);
   }
 
