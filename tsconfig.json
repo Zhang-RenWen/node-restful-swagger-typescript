@@ -5,5 +5,7 @@
     "rootDir": "./",
     "outDir": "./build",
     "esModuleInterop": true
-  }
+  },
+  "include": ["./build"],
+  "exclude": ["/"]
 }
